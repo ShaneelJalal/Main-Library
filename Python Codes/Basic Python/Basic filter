@@ -1,0 +1,8 @@
+#map()
+numbers = [1,2,3]
+
+def isEven(n):
+    return n % 2 == 0
+
+result = filter(isEven, numbers)
+print(list(result))

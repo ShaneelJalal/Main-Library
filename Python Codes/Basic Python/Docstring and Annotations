@@ -1,0 +1,11 @@
+# Docstrings
+# Annotations
+"""
+
+This is a docstring.
+
+"""
+def increment(n: int) -> int: # <-- Type hints
+  """Increments a number by 1"""
+  return n + 1
+print(help())
