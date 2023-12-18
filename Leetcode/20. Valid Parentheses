@@ -1,0 +1,11 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        parentheses = {'(':')', '{':'}', '[':']'}
+        stack = []
+        for i in s:
+            if i in parentheses:
+                stack.append(i)
+            else:
+                if len(stack) == 0 or i not in parentheses[stack.pop()]:
+                    return False
+        return len(stack) == 0
