@@ -1,0 +1,45 @@
+import sqlite3
+
+# EXECUTES FROM THE SHELL (terminal)
+
+#DATA TYPES
+
+# NULL
+# INTEGER
+# REAL
+# TEXT
+# BLOB
+#conn = sqlite3.connect(':memory:')
+conn = sqlite3.connect('customers.db')
+
+#Create a cursor object
+c = conn.cursor()
+
+# Create a table
+#c.execute('CREATE TABLE customers (first_name text, last_name text, email text)')
+# Corrected the syntax for CREATE TABLE statement
+#Table has already been created, hence commented out this command.
+
+#Inserting one record
+#c.execute("INSERT INTO customers VALUES ('John', 'Doe', 'tzirw@example.com')")
+
+#Inserting many records
+many_customers = [
+  ('Mary', 'Sue', 'marysue100@gmail.com'),
+  ('James', 'Snow', 'zigalig@example.com'),
+  ('John', 'Smith', 'plsgq@example.com'),
+  ('Jane', 'Smith', 'tugrp@example.com'),
+  ('Jim', 'Smith', 'ztejd@example.com'),
+  ('Jill', 'Wilson', 'ejeyd@example.com'),
+]
+
+c.executemany("INSERT INTO customers VALUES (?,?,?)", many_customers)  # Use executemany method to insert multiple records
+
+#print a line to verify
+print("Command executed successfully")
+
+#Commit our connection
+conn.commit()
+
+#Close our connection
+conn.close()
