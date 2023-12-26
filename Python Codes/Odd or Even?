@@ -1,0 +1,6 @@
+#Odd or even?
+number = int(input("Enter a number: "))
+if number % 2 == 0: #the % operator is used to find the remainder of a division
+	print("The number is even.")
+else:
+	print("The number is odd.")
