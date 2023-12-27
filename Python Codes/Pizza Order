@@ -1,0 +1,24 @@
+#Pizza order
+print ("Thank you for choosing Python Pizza Dilveries!")
+size = input("What size pizza would you like? S, M, or L? ").upper()
+add_pepperoni = input("Would you like pepperoni? Y or N? ").upper()
+extra_cheese = input("Would you like extra cheese? Y or N? ").upper()
+cost = 0
+
+if size == "S":
+	cost += 15
+elif size == "M":
+	cost += 20
+else:
+	cost += 25
+
+if add_pepperoni == "Y":
+	if size == "S":
+		cost += 2
+	else:
+		cost += 3
+		
+if extra_cheese == "Y":
+	cost += 1
+	
+print (f"Your final bill is: ${cost}")
