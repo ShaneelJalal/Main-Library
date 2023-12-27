@@ -1,0 +1,28 @@
+# Love Calculator
+
+print ("The love calculator is calculator that will decide if you are compatible.")
+name1 = input("Please enter your name: ").lower()
+name2 = input("Please enter their name: ").lower()
+
+combined_names = name1 + name2
+
+t_count = combined_names.count("t")
+r_count = combined_names.count("r")
+u_count = combined_names.count("u")
+e_count = combined_names.count("e")
+first_digit = t_count + r_count + u_count + e_count
+
+l_count = combined_names.count("l")
+o_count = combined_names.count("o")
+v_count = combined_names.count("v")
+e_count = combined_names.count("e")
+second_digit = l_count + o_count + v_count + e_count
+
+score = int(str(first_digit) + str(second_digit))
+
+if (score < 10) or (score > 90):
+	print (f"Your score is {score}.you go together like Coke and Mentos.")
+elif (score >= 40) and (score <= 50):
+	print (f"Your score is {score}. You are alright together.")
+else:
+	print (f"Your score is {score}.")
