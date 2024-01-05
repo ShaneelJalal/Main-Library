@@ -1,0 +1,64 @@
+#Nesting
+capitals = {
+	"France": "Paris",
+	"Germany": "Berlin",
+	"Italy": "Rome",
+	"Spain": "Madrid",
+	"Portugal": "Lisbon",
+	"Greece": "Athens",
+}
+
+#Nesting a List in a Dictionary
+
+travel_log = {
+	"France": ["Paris", "Lille", "Dijon"],
+	"Germany": ["Berlin", "Hamburg", "Stuttgart"],
+	"Italy": ["Rome", "Venice", "Florence"],
+	"Spain": ["Madrid", "Barcelona", "Seville"],
+	"Portugal": ["Lisbon", "Porto", "Braga"],
+	"Greece": ["Athens", "Patras", "Thessaloniki"],
+}
+
+#Nesting a Dictionary in a Dictionary
+
+travel_log2 = {
+	"France": {"cities_visited": ["Paris", "Lille", "Dijon"],"total_visits": 12},
+	"Germany":{"cities_visited": ["Berlin", "Hamburg", "Stuttgart"],"total_visits": 9},
+	"Italy": {"cities_visited":  ["Rome", "Venice", "Florence"],"total_visits": 7},
+	"Spain": {"cities_visited": ["Madrid", "Barcelona", "Seville"],"total_visits": 2},
+	"Portugal": {"cities_visited": ["Lisbon", "Porto", "Braga"],"total_visits": 1},
+	"Greece": {"cities_visited": ["Athens", "Patras", "Thessaloniki"],"total_visits": 5},
+}
+
+#Nesting a Dictionary in a List
+travel_log3 = [
+	{
+		"country": "France",
+		"cities_visited": ["Paris", "Lille", "Dijon"],
+		"total_visits": 12
+	},
+	{
+		"country": "Germany",
+		"cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+		"total_visits": 9
+	},
+	{
+		"country": "Italy",
+		"cities_visited":  ["Rome", "Venice", "Florence"],
+		"total_visits": 7},
+	{
+		"country": "Spain",
+		"cities_visited": ["Madrid", "Barcelona", "Seville"],
+		"total_visits": 2
+	},
+	{
+		"country": "Portugal",
+		"cities_visited": ["Lisbon", "Porto", "Braga"],
+		"total_visits": 1
+	},
+	{
+		"country": "Greece",
+		"cities_visited": ["Athens", "Patras", "Thessaloniki"],
+		"total_visits": 5
+	},
+]
