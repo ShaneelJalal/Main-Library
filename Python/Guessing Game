@@ -1,0 +1,65 @@
+#Number Guessing Game Objectives:
+import random
+import os
+
+clear = lambda: os.system('clear')
+# Include an ASCII art logo.
+logo =""" 
+  ________                                                
+ /  _____/  __ __   ____    ______  ______  ____ _______  
+/   \  ___ |  |  \_/ __ \  /  ___/ /  ___/_/ __ \\_  __ \ 
+\    \_\  \|  |  /\  ___/  \___ \  \___ \ \  ___/ |  | \/ 
+ \______  /|____/  \___  >/____  >/____  > \___  >|__|    
+        \/             \/      \/      \/      \/         
+"""
+
+# Allow the player to submit a guess for a number between 1 and 100.
+
+def guessing_game():
+	print(logo)
+	print("Welcome to the Number Guessing Game!")
+	print("I'm thinking of a number between 1 and 100.")
+	computer_guess = random.randint(1,100)
+	
+# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
+	difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
+	if difficulty == "easy":
+		guesses = 10
+	elif difficulty == "hard":
+		guesses = 5
+# If they got the answer correct, show the actual answer to the player.
+# Track the number of turns remaining.
+# Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
+	game_continue = False
+	
+	while not game_continue:
+		guess = int(input("Make a guess: "))
+		if guess == computer_guess:
+			print(f"You got it! The answer was {computer_guess}")
+			game_continue = True
+			play_again()
+		elif guess > computer_guess:
+			print("Too high.")
+			print("Guess again.")
+			guesses -= 1
+			print(f"You have {guesses} attempts remaining to guess the number.")
+		elif guess < computer_guess:
+			print("Too low.")
+			print("Guess again.")
+			guesses -= 1
+			print(f"You have {guesses} attempts remaining to guess the number.")
+# If they run out of turns, provide feedback to the player. 
+		else:
+			print("You've run out of guesses, you lose.")
+			game_continue = True
+			play_again()
+#Play another game?
+def play_again():
+	again = input("Play again? Type 'y' or 'n': ")
+	if again == "y":
+		clear()
+		guessing_game()
+	elif again == "n":
+		clear()
+		print("Goodbye.")
+guessing_game()
