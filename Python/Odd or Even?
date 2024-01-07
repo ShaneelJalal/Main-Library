@@ -1,4 +1,23 @@
 #Odd or even?
+number = input("Enter a number: ")
+def oddeven(number):
+	if number.isnumeric():
+		if int(number) % 2 == 0: #Find remainder
+			print("The number is even.")
+		else:
+			print("The number is odd.")
+	else:
+		print("Invalid input.")
+oddeven(number)
+
+
+
+
+
+
+
+#old version
+#Odd or even?
 number = int(input("Enter a number: "))
 if number % 2 == 0: #the % operator is used to find the remainder of a division
 	print("The number is even.")
