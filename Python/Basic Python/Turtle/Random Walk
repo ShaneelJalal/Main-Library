@@ -1,0 +1,27 @@
+import random
+import turtle as t
+from turtle import Screen
+
+#Turtle
+tim = t.Turtle()
+tim.shape("circle")
+tim.pensize(10)
+tim.speed("fastest")
+
+colours = [
+	"CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue",
+	"LightSeaGreen", "wheat", "SlateGray", "SeaGreen"
+]
+angles = [0, 90, 180, 270]
+
+#Random Walk
+for _ in range(100):
+	tim.color(random.choice(colours))
+	tim.setheading(random.choice(angles))
+	tim.forward(30)
+
+#Screen
+screen = Screen()
+screen.title("Random Walk")
+screen.setup(width=800, height=800, startx=0, starty=0)
+screen.exitonclick()
