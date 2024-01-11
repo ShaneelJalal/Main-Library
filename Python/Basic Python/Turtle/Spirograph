@@ -1,0 +1,38 @@
+import random
+import turtle as t
+from turtle import Screen
+
+#Turtle
+tim = t.Turtle()
+tim.shape("circle")
+# tim.pensize(10)
+tim.speed("fastest")
+t.colormode(255)
+# angles = [0, 90, 180, 270]
+
+def random_color():
+	r = random.randint(0, 255)
+	g = random.randint(0, 255)
+	b = random.randint(0, 255)
+	colour = (r, g, b)
+	return colour
+
+# Spirograph
+def spirograph(gap_size):
+	for _ in range(int(360 / gap_size)):
+		tim.color(random_color())
+		tim.circle(100)
+		tim.setheading(tim.heading() + gap_size)
+spirograph(5)
+
+# #Random Walk
+# for _ in range(100):
+# 	tim.color(random_colour())
+# 	tim.setheading(random.choice(angles))
+# 	tim.forward(30)
+
+#Screen
+screen = Screen()
+screen.title("Random Walk")
+screen.setup(width=800, height=800, startx=0, starty=0)
+screen.exitonclick()
