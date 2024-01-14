@@ -1,0 +1,15 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:                
+        
+        counter = defaultdict(int)
+        p1 = max_len = max_freq = 0        
+        
+        for p2, l in enumerate(s):
+            counter[l] += 1
+            max_freq = max(max_freq,counter[l])
+            
+            while (p2 - p1 + 1) - max_freq - k > 0:
+                counter[s[p1]] -= 1
+                p1 += 1
+            max_len = max(max_len, p2 - p1 +1)
+        return max_len
