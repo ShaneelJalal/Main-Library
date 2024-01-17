@@ -1,0 +1,55 @@
+# Unlimited Arguments | Unlimited Positional Arguments
+# def add(*args):
+#     for n in args:
+#         print(n)
+
+# def add(*args):
+#     sum = 0
+#     for n in args:
+#         sum += n
+#     return sum
+
+# print(add(3, 5, 6, 2, 1, 5, 12, 15))
+
+# By Index
+# def add(*args):
+#     print(args[3])
+
+#     sum = 0
+#     for n in args:
+#         sum += n
+#     return sum
+# print(add(3, 5, 6, 2, 1, 5, 12, 15))
+
+# Unlimited Arguments | Unlimited Keyword Arguments
+
+
+# def calculate(n, **kwargs):
+#     print(kwargs)
+#     # for key, value in kwargs.items():
+#     #     print(key)
+#     #     print(value)
+#     # print(kwargs["add"])
+#     # print(kwargs["multiply"])
+#     # print(kwargs["divide"])
+#     # print(kwargs["subtract"])
+#     n += kwargs["add"]
+#     n *= kwargs["multiply"]
+#     print(n)
+
+
+# calculate(2, add=3, multiply=5)
+
+
+class Car:
+
+    def __init__(self, **kw):
+        # self.make = kw["make"]
+        # self.model = kw["model"]
+        self.make = kw.get("make")
+        self.model = kw.get("model")
+        self.color = kw.get("color")
+        self.seats = kw.get("seats")
+
+my_car= Car(make = "Nissan", model = "GT-R", color = "Red", seats = 2)
+print(my_car.make,my_car.model)
