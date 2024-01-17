@@ -1,0 +1,13 @@
+class Solution:
+    def findClosestNumber(self, nums: List[int]) -> int:
+        pos, neg = [], []
+        # Sort positve and negative in to lists
+        for item in nums:
+            if item < 0: neg.append(item)
+            elif item > 0: pos.append(item)
+            else: return 0
+        # logic for return value 
+        if not neg: return sorted(pos)[0]
+        if not pos: return sorted(neg)[-1]
+        if abs(sorted(neg)[-1]) < sorted(pos)[0]: return sorted(neg)[-1]
+        return sorted(pos)[0]
