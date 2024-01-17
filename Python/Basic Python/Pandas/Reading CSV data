@@ -1,0 +1,57 @@
+# Reading CSV data
+# with open('weather_data.csv', 'r') as data_file:
+#     data = data_file.readlines()
+#     print(data)
+
+# Using csv library
+# import csv
+
+# with open('weather_data.csv') as data_file:
+#     data = csv.reader(data_file)
+#     print(data)
+#     temperatures = []
+#     for row in data:
+#         if row[1] != 'temp':
+#             temperatures.append(int(row[1]))
+#     print(temperatures)
+
+# Using pandas library
+import pandas
+
+data = pandas.read_csv('weather_data.csv')
+temp = data["temp"]
+condition = data["condition"]
+# # print(data)
+# print(type(data))
+# # print(data['temp'])
+# print(type(data['temp']))
+
+# data_dict = data.to_dict()
+# print(data_dict)
+
+# temp_list = data["temp"].to_list()
+# avg_temp = sum(temp_list) / len(temp_list)
+# print(int(avg_temp))
+
+# avg = data["temp"].mean()
+# max = data["temp"].max()
+
+# print(int(max))
+
+# Get data in columns
+# print(condition) # Series
+# print(data.condition) # Different way to get data in columns
+
+# Get data in rows
+# print(data[data.day == "Monday"]) # Get data in rows where day is Monday
+# print(data[data.temp == data.temp.max()]) # Get row with max temp
+
+# monday = data[data.day == "Monday"]
+# faren_temp = (monday.temp * 9/5) + 32
+# print(faren_temp)
+
+# Create a dataframe from scratch
+data_dict = {"students": ["Amy", "James", "Angela"], "scores": [76, 56, 65]}
+data = pandas.DataFrame(data_dict)
+# print(data)
+data.to_csv("new_data.csv")
