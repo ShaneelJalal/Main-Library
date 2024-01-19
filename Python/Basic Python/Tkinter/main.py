@@ -17,17 +17,19 @@ my_label.config(text="New Text")
 def button_clicked():
     print("I got clicked")
     new_text = input.get()
-    my_label.config(text= new_text)
+    my_label.config(text=new_text)
 
 
-button = Button(text="Click Me", command= button_clicked)
+button = Button(text="Click Me", command=button_clicked)
+button2 = Button(text="New Button")
 # button.pack(side="left")
-button.grid(column=1, row=1)
+button.grid(column=2, row=2)
+button2.grid(column=3, row=1)
 
 # Entry
-input = Entry(width= 10)
+input = Entry(width=10)
 # input.pack(side="left")
-input.grid(column=2, row=2)
+input.grid(column=4, row=3)
 # print(input.get())
 
 window.mainloop()
