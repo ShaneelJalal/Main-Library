@@ -24,7 +24,7 @@ button = Button(text="Click Me", command=button_clicked)
 button2 = Button(text="New Button")
 # button.pack(side="left")
 button.grid(column=2, row=2)
-button2.grid(column=3, row=1)
+button2.grid(column=3, row=0)
 
 # Entry
 input = Entry(width=10)
