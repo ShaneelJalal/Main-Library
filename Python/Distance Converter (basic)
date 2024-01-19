@@ -1,0 +1,46 @@
+#Miles/Km converter
+from tkinter import *
+#actions
+def convert():
+    miles = float(Mentry.get())
+    km = float(Kentry.get())
+    if Mentry.get() != "0":
+        km = miles * 1.609
+        Kentry.delete(0, "end")
+        Kentry.insert(0, f"{km:.2f}")
+    elif Kentry.get() != "0":
+        miles = km * 0.621
+        Mentry.delete(0,"end")
+        Mentry.insert(0, f"{miles:.2f}")
+
+def clear():
+    Mentry.delete(0, "end")
+    Kentry.delete(0, "end")
+    Mentry.insert(0, "0")
+    Kentry.insert(0, "0")
+#window
+window = Tk()
+window.title("Distance Converter")
+window.config(padx=10, pady=10)
+#label
+label = Label(text="is equal to", font=("Arial", 10))
+Mlabel = Label(text="Miles", font=("Arial", 10))
+Klabel = Label(text="Km", font=("Arial", 10))
+label.grid(column=0, row=2)
+Mlabel.grid(column=3, row=1)
+Klabel.grid(column=3, row=2)
+#entry
+Mentry = Entry(width=30)
+Kentry = Entry(width=30)
+Mentry.insert(END, string="0")
+Kentry.insert(END, string="0")
+Mentry.grid(column=2, row=1)
+Kentry.grid(column=2, row=2)
+#Caluclate Button
+button = Button(text="Calculate", command=convert)
+button.grid(column=2, row=3)
+button2 = Button(text="Clear", command=clear)
+button2.grid(column=2, row=4)
+
+#mainloop
+window.mainloop()
