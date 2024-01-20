@@ -5,7 +5,6 @@ from random import choice, randint, shuffle
 import pyperclip
 
 
-# ---------------------------- CONSTANTS -----------------------------------#
 # ---------------------------- PASSWORD GENERATOR ------------------------- #
 def generate_password():
     letters = [
