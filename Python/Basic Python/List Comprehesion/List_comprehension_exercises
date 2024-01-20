@@ -1,0 +1,25 @@
+# Squaring numbers
+
+# numbers = [1, 2, 3, 5, 8, 13, 21, 34, 55]
+# # write your code here
+# squared_numbers = [num ** 2 for num in numbers]
+# # write your code above this line
+# print(squared_numbers)
+
+# Filter out the odd numbers return the even numbers
+# Code below this line
+# result = [num for num in numbers if num % 2 == 0]
+# # Code above this line
+# print(result)
+
+# # Exercise 3
+# with open("file1.txt") as file1:
+# 	list1 = file1.readlines()
+# with open("file2.txt") as file2:
+# 	list2 = file2.readlines()
+# result = [int(num) for num in list1 if num in list2] 
+# # works but is not complete answer
+# #works correctly after moving the order on list2 result[42] was not showing
+# file1.close()
+# file2.close()
+# print(result)
