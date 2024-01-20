@@ -7,10 +7,8 @@ class Solution:
                     print(i, j)
                     self.dfs(grid, i, j)
                     count += 1
-        # print(grid)
         return count
 
-    # use a helper function to flip connected '1's to 0
     def dfs(self, grid, i, j):
         grid[i][j] = 0
         for dr, dc in (1, 0), (-1, 0), (0, -1), (0, 1):
