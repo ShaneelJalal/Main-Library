@@ -73,6 +73,7 @@ username_entry = Entry(width=41)
 password_entry = Entry(width=23)
 
 website_entry.focus()
+username_entry.insert(0, "no@gmail.com")
 
 # Buttons
 generate_button = Button(text="Generate Password", command=generate_password)
