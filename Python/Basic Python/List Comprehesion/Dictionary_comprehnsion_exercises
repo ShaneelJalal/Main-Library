@@ -1,0 +1,14 @@
+#Exercise 1
+# # sentence = input()
+# sentence = "What is the Airspeed Velocity of an Unladen Swallow?"
+# # Don't change code above 👆
+# # Write your code below:
+# words = sentence.split()
+# result = {word:len(word) for word in words}
+# print(result)
+
+# Exercise 2
+# # weather_c = eval(input())
+# weather_c = {"Monday": 12, "Tuesday": 14, "Wednesday": 15, "Thursday": 14, "Friday": 21, "Saturday": 22, "Sunday": 24}
+# weather_f = {key: round((value * 9/5) + 32) for (key, value) in weather_c.items()}
+# print(weather_f)
