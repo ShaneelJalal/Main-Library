@@ -1,0 +1,25 @@
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        # Build our graph
+        G = defaultdict(list)
+        for s, d in prerequisites:
+            G[s].append(d)
+
+        def resolve(course_id):
+            path.add(course_id)
+            for pre in G[course_id]:
+                if pre in resolved:
+                    continue
+                if pre in path or not resolve(pre):
+                    return False
+            path.remove(course_id)
+            resolved.add(course_id)
+            return True
+
+        # Try to resolve every course dependency
+        resolved = set()
+        path = set()
+        for course_id in range(numCourses):
+            if not resolve(course_id):
+                return False
+        return True
