@@ -1,0 +1,39 @@
+class Solution:
+    def pacificAtlantic(self, grid: List[List[int]]) -> List[List[int]]:
+        ROWS, COLS = len(grid), len(grid[0])
+
+        def dfs(r, c, prev):
+            if (
+                0 <= r < ROWS
+                and 0 <= c < COLS
+                and (r, c) not in visited
+                and prev <= grid[r][c]
+            ):
+                visited.add((r, c))
+                dfs(r + 1, c, grid[r][c])
+                dfs(r - 1, c, grid[r][c])
+                dfs(r, c + 1, grid[r][c])
+                dfs(r, c - 1, grid[r][c])
+
+        # Atlantic
+        visited = set()
+        for r in range(ROWS):
+            dfs(r, 0, -1)
+        for c in range(COLS):
+            dfs(0, c, -1)
+        atlantic_visited = visited.copy()
+
+        # Pacific
+        visited = set()
+        for r in range(ROWS):
+            dfs(r, COLS - 1, -1)
+        for c in range(COLS):
+            dfs(ROWS - 1, c, -1)
+
+        # Return what the Atlantic and pacific can reach
+        res = []
+        for r in range(ROWS):
+            for c in range(COLS):
+                if (r, c) in atlantic_visited and (r, c) in visited:
+                    res.append([r, c])
+        return res
