@@ -1,0 +1,12 @@
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        nums3 = sorted(nums1 + nums2)
+        return self.findMiddle(nums3)
+
+    def findMiddle(self, input_list: List[int]) -> float:
+        middle = len(input_list) / 2
+        if middle % 1 != 0:  # Check if middle is not an integer (odd length)
+            return float(input_list[int(middle - 0.5)])
+        else:  # Even length
+            middle = int(middle)
+            return (input_list[middle - 1] + input_list[middle]) / 2
