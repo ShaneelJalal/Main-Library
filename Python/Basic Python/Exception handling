@@ -53,10 +53,52 @@
 
 # Raising Exceptions
 
-height = float(input("Height: "))
-weight = float(input("Weight: "))
+#height = float(input("Height: "))
+#weight = float(input("Weight: "))
 
-if height > 3:
-    raise ValueError("Human height should not be over 3 meters")
-bmi = weight / height**2
-print(bmi)
+#if height > 3:
+#    raise ValueError("Human height should not be over 3 meters")
+#bmi = weight / height**2
+#print(bmi)
+
+
+# Exception handling exercises
+
+# Exercise 1
+# fruits = eval(input())
+# fruits = ['apple', 'banana', 'cherry']
+
+
+# def make_pie(index):
+#     try:
+#         fruit = fruits[index]
+#         print(fruit + " pie")
+#     except IndexError:
+#         print("Fruit pie")
+#     else:
+#         print(fruit + " pie")
+
+
+# make_pie(4)
+
+# Exercise 2
+# facebook_posts = eval(input())
+# facebook_posts = [
+# 	{'Likes': 21, 'Comments': 2}, 
+# 	{'Likes': 13, 'Comments': 2, 'Shares': 1}, 
+# 	{'Likes': 33, 'Comments': 8, 'Shares': 3}, 
+# 	{'Comments': 4, 'Shares': 2}, 
+# 	{'Comments': 1, 'Shares': 1}, 
+# 	{'Likes': 19, 'Comments': 3}
+# ]
+
+# total_likes = 0
+
+# try:
+# 	for post in facebook_posts:
+# 		total_likes = total_likes + post['Likes']
+# except KeyError:
+# 	pass
+
+
+# print(total_likes) # 67
