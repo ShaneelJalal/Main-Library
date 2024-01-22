@@ -19,7 +19,7 @@ namespace Basic_Program
       Console.Write("\tCODE"); // Tabs/indents the line
       Console.Write("\bCODE"); // Backspaces the line
       Console.Write("\nCODE"); // New line
-      Console.Readkey(); // Waits for user input  
+      Console.ReadKey(); // Waits for user input  
     }
   }
 }
