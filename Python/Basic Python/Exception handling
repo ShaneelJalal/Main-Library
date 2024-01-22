@@ -26,25 +26,37 @@
 
 # Raising Exceptions
 # FileNotFoundError
-try:
-    file = open("a_file.txt")
-    a_dictionary = {"key": "value"}
-    print(a_dictionary["asdasdf"])  # Error is caught, proceeds with the code
+# try:
+#     file = open("a_file.txt")
+#     a_dictionary = {"key": "value"}
+#     print(a_dictionary["asdasdf"])  # Error is caught, proceeds with the code
 
-except FileNotFoundError:  # this will return error without another exception
-    # print("There was an error")
-    file = open("a_file.txt", "w")  # Creates file as none was present
-    file.write("Something")
-# except KeyError:
-#     print("That key does not exist") # Exception caught
+# except FileNotFoundError:  # this will return error without another exception
+#     # print("There was an error")
+#     file = open("a_file.txt", "w")  # Creates file as none was present
+#     file.write("Something")
+# # except KeyError:
+# #     print("That key does not exist") # Exception caught
 
-except KeyError as error_message:  # A better way to catch the error
-    print(f"That key {error_message} does not exist")
+# except KeyError as error_message:  # A better way to catch the error
+#     print(f"That key {error_message} does not exist")
 
-else:
-    content = file.read()
-    print(content)  # first instance with no file will return an error
+# else:
+#     content = file.read()
+#     print(content)  # first instance with no file will return an error
 
-finally:
-    file.close()
-    print("File was closed")
+# finally:
+#     file.close()
+#     print("File was closed")
+# 	raise TypeError("This is an error that I made up")  # Raises an error
+# 	# raise Exception("An error happened")  # Raises an error
+
+# Raising Exceptions
+
+height = float(input("Height: "))
+weight = float(input("Weight: "))
+
+if height > 3:
+    raise ValueError("Human height should not be over 3 meters")
+bmi = weight / height**2
+print(bmi)
