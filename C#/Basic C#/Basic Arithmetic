@@ -1,0 +1,35 @@
+using System; 
+
+namespace Basic_Program{
+    
+  public class Program{
+        
+    public static void Main(string[] args){
+
+      int friends = 5;
+      
+      // Increments the value of friends by 1
+      // friends = friends + 1;
+      // friends += 1;
+      // friends++; // Used within loops
+
+      // Decrementing
+
+      // friends = friends - 1;
+      // friends -= 1;
+      // friends--; // Used within loops
+
+      // friends = friends * 2;
+      // friends *= 2;
+
+      // friends = friends / 2; // returns 2 as interger division
+      // friends /= 2;
+
+      int remainder = friends % 3; // returns 1 as remainder
+      
+      Console.WriteLine(friends);
+      
+      Console.ReadKey();
+    }
+  }
+}
